@@ -297,7 +297,7 @@ OctomapServer::OctomapServer(const rclcpp::NodeOptions & node_options)
   binary_map_pub_ = create_publisher<Octomap>("octomap_binary", qos);
   full_map_pub_ = create_publisher<Octomap>("octomap_full", qos);
   point_cloud_pub_ = create_publisher<PointCloud2>("octomap_point_cloud_centers", qos);
-  map_pub_ = create_publisher<OccupancyGrid>("projected_map", qos.keep_last(5));
+  map_pub_ = create_publisher<OccupancyGrid>("map", qos.keep_last(5));
   fmarker_pub_ = create_publisher<MarkerArray>("free_cells_vis_array", qos);
 
   tf2_buffer_ = std::make_shared<tf2_ros::Buffer>(get_clock());
