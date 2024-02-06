@@ -329,10 +329,10 @@ OctomapServer::OctomapServer(const rclcpp::NodeOptions & node_options)
   set_param_res_ =
     this->add_on_set_parameters_callback(std::bind(&OctomapServer::onParameter, this, _1));
 
-  const auto filename = declare_parameter("octomap_path", "");
+  /* const auto filename = declare_parameter("octomap_path", "");
   if (!openFile(filename)) {
     RCLCPP_WARN(get_logger(), "Could not open file %s", filename.c_str());
-  }
+  } */
 }
 
 bool OctomapServer::openFile(const std::string & filename)
@@ -431,7 +431,7 @@ void OctomapServer::insertCloudCallback(const PointCloud2::ConstSharedPtr cloud)
   PCLPointCloud pc_nonground;  // everything else
 
   if (filter_ground_plane_) {
-    
+
     // geometry_msgs::msg::TransformStamped sensor_to_base_transform_stamped;
     // geometry_msgs::msg::TransformStamped base_to_world_transform_stamped;
     // try {
@@ -458,7 +458,7 @@ void OctomapServer::insertCloudCallback(const PointCloud2::ConstSharedPtr cloud)
     //   tf2::transformToEigen(base_to_world_transform_stamped.transform).matrix().cast<float>();
 
     // transform pointcloud from sensor frame to fixed robot frame
-    
+
     // taeyoung fixed
     // pcl::transformPointCloud(pc, pc, sensor_to_base);
 

@@ -11,8 +11,8 @@
 		<param name="resolution" value="0.05"/>
 
 		<!--  fixed map frame (set to 'map' if SLAM or localization running!)  -->
-		<param name="frame_id" value="camera_init"/>
-		<param name="base_frame_id" value="body"/> <!--  no used -->
+		<param name="frame_id" value="map"/>
+		<param name="base_frame_id" value="odom"/> <!--  no used -->
 
 		<!--  maximum range to integrate (speedup!)  -->
 		<param name="sensor_model.max_range" value="40.0"/>
